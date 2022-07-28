@@ -4,6 +4,8 @@ metadata:
   name: {FORGE_POD_NAME}
   labels:
     app.kubernetes.io/name: forge
+    forge-namespace: {FORGE_NAMESPACE}
+    forge-image-tag: {IMAGE_TAG}
 spec:
   restartPolicy: Never
   serviceAccountName: forge
