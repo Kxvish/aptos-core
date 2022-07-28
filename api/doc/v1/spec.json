@@ -3,7 +3,7 @@
   "info": {
     "title": "Aptos Node API",
     "description": "The Aptos Node API is a RESTful API for client applications to interact with the Aptos blockchain.",
-    "version": "0.2.1",
+    "version": "0.1.0",
     "contact": {
       "name": "Aptos Labs",
       "url": "https://github.com/aptos-labs/aptos-core"
@@ -77,7 +77,11 @@
               },
               "application/x-bcs": {
                 "schema": {
-                  "$ref": "#/components/schemas/AccountData"
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint8"
+                  }
                 }
               }
             },
@@ -94,32 +98,32 @@
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-OLDEST-VERSION": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-TIMESTAMPUSEC": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-EPOCH": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               }
             }
@@ -203,7 +207,8 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/MoveResource"
+                    "type": "integer",
+                    "format": "uint8"
                   }
                 }
               }
@@ -221,32 +226,32 @@
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-OLDEST-VERSION": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-TIMESTAMPUSEC": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-EPOCH": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               }
             }
@@ -330,7 +335,8 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/MoveModuleBytecode"
+                    "type": "integer",
+                    "format": "uint8"
                   }
                 }
               }
@@ -348,32 +354,32 @@
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-OLDEST-VERSION": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-TIMESTAMPUSEC": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-EPOCH": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               }
             }
@@ -418,7 +424,7 @@
           "General"
         ],
         "summary": "Show OpenAPI explorer",
-        "description": "Provides a UI that you can use to explore the API. You can also retrieve the API directly at `/openapi.yaml` and `/openapi.json`.",
+        "description": "Provides a UI that you can use to explore the API. You can also retrieve the API directly at `/spec.yaml` and `/spec.json`.",
         "responses": {
           "200": {
             "description": "",
@@ -431,7 +437,7 @@
             }
           }
         },
-        "operationId": "openapi"
+        "operationId": "spec"
       }
     },
     "/events/{event_key}": {
@@ -489,7 +495,8 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Event"
+                    "type": "integer",
+                    "format": "uint8"
                   }
                 }
               }
@@ -507,32 +514,32 @@
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-OLDEST-VERSION": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-TIMESTAMPUSEC": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-EPOCH": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               }
             }
@@ -592,8 +599,7 @@
           {
             "name": "event_handle",
             "schema": {
-              "type": "string",
-              "format": "MoveStructTagWrapper"
+              "$ref": "#/components/schemas/MoveStructTag"
             },
             "in": "path",
             "required": true,
@@ -646,7 +652,8 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Event"
+                    "type": "integer",
+                    "format": "uint8"
                   }
                 }
               }
@@ -664,32 +671,32 @@
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-OLDEST-VERSION": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-TIMESTAMPUSEC": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-EPOCH": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               }
             }
@@ -746,7 +753,11 @@
               },
               "application/x-bcs": {
                 "schema": {
-                  "$ref": "#/components/schemas/IndexResponse"
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint8"
+                  }
                 }
               }
             },
@@ -763,32 +774,32 @@
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-OLDEST-VERSION": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-TIMESTAMPUSEC": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-EPOCH": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               }
             }
@@ -815,6 +826,410 @@
           }
         },
         "operationId": "get_ledger_info"
+      }
+    },
+    "/accounts/{address}/resource/{resource_type}": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Get specific account resource",
+        "description": "This endpoint returns the resource of a specific type residing at a given\naccount at a specified ledger version (AKA transaction version). If the\nledger version is not specified in the request, the latest ledger version\nis used.\n\nThe Aptos nodes prune account state history, via a configurable time window (link).\nIf the requested data has been pruned, the server responds with a 404.",
+        "parameters": [
+          {
+            "name": "address",
+            "schema": {
+              "type": "string",
+              "format": "Address"
+            },
+            "in": "path",
+            "required": true,
+            "deprecated": false
+          },
+          {
+            "name": "resource_type",
+            "schema": {
+              "$ref": "#/components/schemas/MoveStructTag"
+            },
+            "in": "path",
+            "required": true,
+            "deprecated": false
+          },
+          {
+            "name": "ledger_version",
+            "schema": {
+              "type": "string",
+              "format": "U64"
+            },
+            "in": "query",
+            "required": false,
+            "deprecated": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MoveResource"
+                }
+              },
+              "application/x-bcs": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint8"
+                  }
+                }
+              }
+            },
+            "headers": {
+              "X-APTOS-CHAIN-ID": {
+                "required": true,
+                "deprecated": false,
+                "schema": {
+                  "type": "integer",
+                  "format": "uint16"
+                }
+              },
+              "X-APTOS-LEDGER-VERSION": {
+                "required": true,
+                "deprecated": false,
+                "schema": {
+                  "type": "integer",
+                  "format": "uint64"
+                }
+              },
+              "X-APTOS-LEDGER-OLDEST-VERSION": {
+                "required": true,
+                "deprecated": false,
+                "schema": {
+                  "type": "integer",
+                  "format": "uint64"
+                }
+              },
+              "X-APTOS-LEDGER-TIMESTAMPUSEC": {
+                "required": true,
+                "deprecated": false,
+                "schema": {
+                  "type": "integer",
+                  "format": "uint64"
+                }
+              },
+              "X-APTOS-EPOCH": {
+                "required": true,
+                "deprecated": false,
+                "schema": {
+                  "type": "integer",
+                  "format": "uint64"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AptosError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AptosError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AptosError"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get_account_resource"
+      }
+    },
+    "/accounts/{address}/module/{module_name}": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Get specific account module",
+        "description": "This endpoint returns the module with a specific name residing at a given\naccount at a specified ledger version (AKA transaction version). If the\nledger version is not specified in the request, the latest ledger version\nis used.\n\nThe Aptos nodes prune account state history, via a configurable time window (link).\nIf the requested data has been pruned, the server responds with a 404.",
+        "parameters": [
+          {
+            "name": "address",
+            "schema": {
+              "type": "string",
+              "format": "Address"
+            },
+            "in": "path",
+            "required": true,
+            "deprecated": false
+          },
+          {
+            "name": "module_name",
+            "schema": {
+              "type": "string",
+              "format": "IdentifierWrapper"
+            },
+            "in": "path",
+            "required": true,
+            "deprecated": false
+          },
+          {
+            "name": "ledger_version",
+            "schema": {
+              "type": "string",
+              "format": "U64"
+            },
+            "in": "query",
+            "required": false,
+            "deprecated": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MoveModuleBytecode"
+                }
+              },
+              "application/x-bcs": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint8"
+                  }
+                }
+              }
+            },
+            "headers": {
+              "X-APTOS-CHAIN-ID": {
+                "required": true,
+                "deprecated": false,
+                "schema": {
+                  "type": "integer",
+                  "format": "uint16"
+                }
+              },
+              "X-APTOS-LEDGER-VERSION": {
+                "required": true,
+                "deprecated": false,
+                "schema": {
+                  "type": "integer",
+                  "format": "uint64"
+                }
+              },
+              "X-APTOS-LEDGER-OLDEST-VERSION": {
+                "required": true,
+                "deprecated": false,
+                "schema": {
+                  "type": "integer",
+                  "format": "uint64"
+                }
+              },
+              "X-APTOS-LEDGER-TIMESTAMPUSEC": {
+                "required": true,
+                "deprecated": false,
+                "schema": {
+                  "type": "integer",
+                  "format": "uint64"
+                }
+              },
+              "X-APTOS-EPOCH": {
+                "required": true,
+                "deprecated": false,
+                "schema": {
+                  "type": "integer",
+                  "format": "uint64"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AptosError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AptosError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AptosError"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get_account_module"
+      }
+    },
+    "/tables/{table_handle}/item": {
+      "post": {
+        "tags": [
+          "Tables"
+        ],
+        "summary": "Get table item",
+        "description": "todo",
+        "parameters": [
+          {
+            "name": "table_handle",
+            "schema": {
+              "type": "string",
+              "format": "U128"
+            },
+            "in": "path",
+            "required": true,
+            "deprecated": false
+          },
+          {
+            "name": "ledger_version",
+            "schema": {
+              "type": "string",
+              "format": "U64"
+            },
+            "in": "query",
+            "required": false,
+            "deprecated": false
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TableItemRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MoveValue"
+                }
+              },
+              "application/x-bcs": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint8"
+                  }
+                }
+              }
+            },
+            "headers": {
+              "X-APTOS-CHAIN-ID": {
+                "required": true,
+                "deprecated": false,
+                "schema": {
+                  "type": "integer",
+                  "format": "uint16"
+                }
+              },
+              "X-APTOS-LEDGER-VERSION": {
+                "required": true,
+                "deprecated": false,
+                "schema": {
+                  "type": "integer",
+                  "format": "uint64"
+                }
+              },
+              "X-APTOS-LEDGER-OLDEST-VERSION": {
+                "required": true,
+                "deprecated": false,
+                "schema": {
+                  "type": "integer",
+                  "format": "uint64"
+                }
+              },
+              "X-APTOS-LEDGER-TIMESTAMPUSEC": {
+                "required": true,
+                "deprecated": false,
+                "schema": {
+                  "type": "integer",
+                  "format": "uint64"
+                }
+              },
+              "X-APTOS-EPOCH": {
+                "required": true,
+                "deprecated": false,
+                "schema": {
+                  "type": "integer",
+                  "format": "uint64"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AptosError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AptosError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AptosError"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get_table_item"
       }
     },
     "/transactions": {
@@ -862,7 +1277,8 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Transaction"
+                    "type": "integer",
+                    "format": "uint8"
                   }
                 }
               }
@@ -880,32 +1296,32 @@
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-OLDEST-VERSION": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-TIMESTAMPUSEC": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-EPOCH": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               }
             }
@@ -979,7 +1395,11 @@
               },
               "application/x-bcs": {
                 "schema": {
-                  "$ref": "#/components/schemas/PendingTransaction"
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint8"
+                  }
                 }
               }
             },
@@ -996,32 +1416,32 @@
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-OLDEST-VERSION": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-TIMESTAMPUSEC": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-EPOCH": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               }
             }
@@ -1100,7 +1520,11 @@
               },
               "application/x-bcs": {
                 "schema": {
-                  "$ref": "#/components/schemas/Transaction"
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint8"
+                  }
                 }
               }
             },
@@ -1117,32 +1541,32 @@
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-OLDEST-VERSION": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-TIMESTAMPUSEC": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-EPOCH": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               }
             }
@@ -1211,7 +1635,11 @@
               },
               "application/x-bcs": {
                 "schema": {
-                  "$ref": "#/components/schemas/Transaction"
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint8"
+                  }
                 }
               }
             },
@@ -1228,32 +1656,32 @@
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-OLDEST-VERSION": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-TIMESTAMPUSEC": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-EPOCH": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               }
             }
@@ -1298,7 +1726,7 @@
           "Transactions"
         ],
         "summary": "Get account transactions",
-        "description": "todo\ntodo, note that this currently returns [] even if the account doesn't\nexist, when it should really return a 404.",
+        "description": "todo",
         "parameters": [
           {
             "name": "address",
@@ -1347,7 +1775,8 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Transaction"
+                    "type": "integer",
+                    "format": "uint8"
                   }
                 }
               }
@@ -1365,32 +1794,32 @@
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-OLDEST-VERSION": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-TIMESTAMPUSEC": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-EPOCH": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               }
             }
@@ -1471,7 +1900,8 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Transaction"
+                    "type": "integer",
+                    "format": "uint8"
                   }
                 }
               }
@@ -1489,32 +1919,32 @@
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-OLDEST-VERSION": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-TIMESTAMPUSEC": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-EPOCH": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               }
             }
@@ -1592,8 +2022,11 @@
               },
               "application/x-bcs": {
                 "schema": {
-                  "type": "string",
-                  "format": "HexEncodedBytes"
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint8"
+                  }
                 }
               }
             },
@@ -1610,32 +2043,32 @@
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-OLDEST-VERSION": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-LEDGER-TIMESTAMPUSEC": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               },
               "X-APTOS-EPOCH": {
                 "required": true,
                 "deprecated": false,
                 "schema": {
-                  "type": "string",
-                  "format": "U64"
+                  "type": "integer",
+                  "format": "uint64"
                 }
               }
             }
@@ -1697,8 +2130,8 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "Ed25519Signature": "#/components/schemas/AccountSignature_Ed25519Signature",
-            "MultiEd25519Signature": "#/components/schemas/AccountSignature_MultiEd25519Signature"
+            "ed_25519_signature": "#/components/schemas/AccountSignature_Ed25519Signature",
+            "multi_ed_25519_signature": "#/components/schemas/AccountSignature_MultiEd25519Signature"
           }
         }
       },
@@ -1712,7 +2145,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "Ed25519Signature"
+                "example": "ed_25519_signature"
               }
             }
           },
@@ -1731,7 +2164,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "MultiEd25519Signature"
+                "example": "multi_ed_25519_signature"
               }
             }
           },
@@ -2046,7 +2479,7 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "WriteSetPayload": "#/components/schemas/GenesisPayload_WriteSetPayload"
+            "write_set_payload": "#/components/schemas/GenesisPayload_WriteSetPayload"
           }
         }
       },
@@ -2060,7 +2493,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "WriteSetPayload"
+                "example": "write_set_payload"
               }
             }
           },
@@ -2213,15 +2646,13 @@
           "params": {
             "type": "array",
             "items": {
-              "type": "string",
-              "format": "MoveType"
+              "$ref": "#/components/schemas/MoveTypeWrapper"
             }
           },
           "return": {
             "type": "array",
             "items": {
-              "type": "string",
-              "format": "MoveType"
+              "$ref": "#/components/schemas/MoveTypeWrapper"
             }
           }
         }
@@ -2244,9 +2675,9 @@
       "MoveFunctionVisibility": {
         "type": "string",
         "enum": [
-          "Private",
-          "Public",
-          "Friend"
+          "private",
+          "public",
+          "friend"
         ]
       },
       "MoveModule": {
@@ -2330,8 +2761,8 @@
             "$ref": "#/components/schemas/MoveStructTag"
           },
           "data": {
-            "type": "object",
-            "additionalProperties": {}
+            "type": "string",
+            "format": "MoveStructValue"
           }
         }
       },
@@ -2400,8 +2831,7 @@
             "format": "IdentifierWrapper"
           },
           "type": {
-            "type": "string",
-            "format": "MoveType"
+            "$ref": "#/components/schemas/MoveTypeWrapper"
           }
         }
       },
@@ -2448,11 +2878,63 @@
           "generic_type_params": {
             "type": "array",
             "items": {
-              "type": "string",
-              "format": "MoveType"
+              "$ref": "#/components/schemas/MoveTypeWrapper"
             }
           }
         }
+      },
+      "MoveTypeWrapper": {
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "MoveType"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "MoveValue": {
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "integer",
+            "format": "uint8"
+          },
+          {
+            "type": "string",
+            "format": "U64"
+          },
+          {
+            "type": "string",
+            "format": "U128"
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "string",
+            "format": "Address"
+          },
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MoveValue"
+            }
+          },
+          {
+            "type": "string",
+            "format": "HexEncodedBytes"
+          },
+          {
+            "type": "string",
+            "format": "MoveStructValue"
+          },
+          {
+            "type": "string"
+          }
+        ]
       },
       "MultiAgentSignature": {
         "type": "object",
@@ -2741,6 +3223,25 @@
           }
         }
       },
+      "TableItemRequest": {
+        "type": "object",
+        "required": [
+          "key_type",
+          "value_type",
+          "key"
+        ],
+        "properties": {
+          "key_type": {
+            "type": "string",
+            "format": "MoveType"
+          },
+          "value_type": {
+            "type": "string",
+            "format": "MoveType"
+          },
+          "key": {}
+        }
+      },
       "Transaction": {
         "type": "object",
         "oneOf": [
@@ -2763,11 +3264,11 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "PendingTransaction": "#/components/schemas/Transaction_PendingTransaction",
-            "UserTransaction": "#/components/schemas/Transaction_UserTransaction",
-            "GenesisTransaction": "#/components/schemas/Transaction_GenesisTransaction",
-            "BlockMetadataTransaction": "#/components/schemas/Transaction_BlockMetadataTransaction",
-            "StateCheckpointTransaction": "#/components/schemas/Transaction_StateCheckpointTransaction"
+            "pending_transaction": "#/components/schemas/Transaction_PendingTransaction",
+            "user_transaction": "#/components/schemas/Transaction_UserTransaction",
+            "genesis_transaction": "#/components/schemas/Transaction_GenesisTransaction",
+            "block_metadata_transaction": "#/components/schemas/Transaction_BlockMetadataTransaction",
+            "state_checkpoint_transaction": "#/components/schemas/Transaction_StateCheckpointTransaction"
           }
         }
       },
@@ -2790,10 +3291,10 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "ScriptFunctionPayload": "#/components/schemas/TransactionPayload_ScriptFunctionPayload",
-            "ScriptPayload": "#/components/schemas/TransactionPayload_ScriptPayload",
-            "ModuleBundlePayload": "#/components/schemas/TransactionPayload_ModuleBundlePayload",
-            "WriteSetPayload": "#/components/schemas/TransactionPayload_WriteSetPayload"
+            "script_function_payload": "#/components/schemas/TransactionPayload_ScriptFunctionPayload",
+            "script_payload": "#/components/schemas/TransactionPayload_ScriptPayload",
+            "module_bundle_payload": "#/components/schemas/TransactionPayload_ModuleBundlePayload",
+            "write_set_payload": "#/components/schemas/TransactionPayload_WriteSetPayload"
           }
         }
       },
@@ -2807,7 +3308,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "ModuleBundlePayload"
+                "example": "module_bundle_payload"
               }
             }
           },
@@ -2826,7 +3327,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "ScriptFunctionPayload"
+                "example": "script_function_payload"
               }
             }
           },
@@ -2845,7 +3346,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "ScriptPayload"
+                "example": "script_payload"
               }
             }
           },
@@ -2864,7 +3365,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "WriteSetPayload"
+                "example": "write_set_payload"
               }
             }
           },
@@ -2889,9 +3390,9 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "Ed25519Signature": "#/components/schemas/TransactionSignature_Ed25519Signature",
-            "MultiEd25519Signature": "#/components/schemas/TransactionSignature_MultiEd25519Signature",
-            "MultiAgentSignature": "#/components/schemas/TransactionSignature_MultiAgentSignature"
+            "ed_25519_signature": "#/components/schemas/TransactionSignature_Ed25519Signature",
+            "multi_ed_25519_signature": "#/components/schemas/TransactionSignature_MultiEd25519Signature",
+            "multi_agent_signature": "#/components/schemas/TransactionSignature_MultiAgentSignature"
           }
         }
       },
@@ -2905,7 +3406,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "Ed25519Signature"
+                "example": "ed_25519_signature"
               }
             }
           },
@@ -2924,7 +3425,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "MultiAgentSignature"
+                "example": "multi_agent_signature"
               }
             }
           },
@@ -2943,7 +3444,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "MultiEd25519Signature"
+                "example": "multi_ed_25519_signature"
               }
             }
           },
@@ -2962,7 +3463,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "BlockMetadataTransaction"
+                "example": "block_metadata_transaction"
               }
             }
           },
@@ -2981,7 +3482,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "GenesisTransaction"
+                "example": "genesis_transaction"
               }
             }
           },
@@ -3000,7 +3501,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "PendingTransaction"
+                "example": "pending_transaction"
               }
             }
           },
@@ -3019,7 +3520,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "StateCheckpointTransaction"
+                "example": "state_checkpoint_transaction"
               }
             }
           },
@@ -3038,7 +3539,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "UserTransaction"
+                "example": "user_transaction"
               }
             }
           },
@@ -3196,8 +3697,8 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "ScriptWriteSet": "#/components/schemas/WriteSet_ScriptWriteSet",
-            "DirectWriteSet": "#/components/schemas/WriteSet_DirectWriteSet"
+            "script_write_set": "#/components/schemas/WriteSet_ScriptWriteSet",
+            "direct_write_set": "#/components/schemas/WriteSet_DirectWriteSet"
           }
         }
       },
@@ -3226,12 +3727,12 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "DeleteModule": "#/components/schemas/WriteSetChange_DeleteModule",
-            "DeleteResource": "#/components/schemas/WriteSetChange_DeleteResource",
-            "DeleteTableItem": "#/components/schemas/WriteSetChange_DeleteTableItem",
-            "WriteModule": "#/components/schemas/WriteSetChange_WriteModule",
-            "WriteResource": "#/components/schemas/WriteSetChange_WriteResource",
-            "WriteTableItem": "#/components/schemas/WriteSetChange_WriteTableItem"
+            "delete_module": "#/components/schemas/WriteSetChange_DeleteModule",
+            "delete_resource": "#/components/schemas/WriteSetChange_DeleteResource",
+            "delete_table_item": "#/components/schemas/WriteSetChange_DeleteTableItem",
+            "write_module": "#/components/schemas/WriteSetChange_WriteModule",
+            "write_resource": "#/components/schemas/WriteSetChange_WriteResource",
+            "write_table_item": "#/components/schemas/WriteSetChange_WriteTableItem"
           }
         }
       },
@@ -3245,7 +3746,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "DeleteModule"
+                "example": "delete_module"
               }
             }
           },
@@ -3264,7 +3765,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "DeleteResource"
+                "example": "delete_resource"
               }
             }
           },
@@ -3283,7 +3784,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "DeleteTableItem"
+                "example": "delete_table_item"
               }
             }
           },
@@ -3302,7 +3803,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "WriteModule"
+                "example": "write_module"
               }
             }
           },
@@ -3321,7 +3822,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "WriteResource"
+                "example": "write_resource"
               }
             }
           },
@@ -3340,7 +3841,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "WriteTableItem"
+                "example": "write_table_item"
               }
             }
           },
@@ -3370,7 +3871,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "DirectWriteSet"
+                "example": "direct_write_set"
               }
             }
           },
@@ -3389,7 +3890,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "ScriptWriteSet"
+                "example": "script_write_set"
               }
             }
           },

@@ -3,7 +3,7 @@ openapi: 3.0.0
 info:
   title: Aptos Node API
   description: The Aptos Node API is a RESTful API for client applications to interact with the Aptos blockchain.
-  version: 0.2.1
+  version: 0.1.0
   contact:
     name: Aptos Labs
     url: "https://github.com/aptos-labs/aptos-core"
@@ -88,12 +88,6 @@ paths:
               schema:
                 type: integer
                 format: uint64
-        "415":
-          description: ""
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AptosError"
         "400":
           description: ""
           content:
@@ -180,12 +174,6 @@ paths:
               schema:
                 type: integer
                 format: uint64
-        "415":
-          description: ""
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AptosError"
         "400":
           description: ""
           content:
@@ -272,12 +260,6 @@ paths:
               schema:
                 type: integer
                 format: uint64
-        "415":
-          description: ""
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AptosError"
         "400":
           description: ""
           content:
@@ -385,12 +367,6 @@ paths:
               schema:
                 type: integer
                 format: uint64
-        "415":
-          description: ""
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AptosError"
         "400":
           description: ""
           content:
@@ -497,12 +473,6 @@ paths:
               schema:
                 type: integer
                 format: uint64
-        "415":
-          description: ""
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AptosError"
         "400":
           description: ""
           content:
@@ -572,12 +542,6 @@ paths:
               schema:
                 type: integer
                 format: uint64
-        "415":
-          description: ""
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AptosError"
         "400":
           description: ""
           content:
@@ -662,12 +626,6 @@ paths:
               schema:
                 type: integer
                 format: uint64
-        "415":
-          description: ""
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AptosError"
         "400":
           description: ""
           content:
@@ -759,12 +717,6 @@ paths:
               schema:
                 type: integer
                 format: uint64
-        "415":
-          description: ""
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AptosError"
         "400":
           description: ""
           content:
@@ -855,12 +807,6 @@ paths:
               schema:
                 type: integer
                 format: uint64
-        "415":
-          description: ""
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AptosError"
         "400":
           description: ""
           content:
@@ -947,12 +893,6 @@ paths:
               schema:
                 type: integer
                 format: uint64
-        "415":
-          description: ""
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AptosError"
         "400":
           description: ""
           content:
@@ -1033,12 +973,6 @@ paths:
               schema:
                 type: integer
                 format: uint64
-        "415":
-          description: ""
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AptosError"
         "400":
           description: ""
           content:
@@ -1122,12 +1056,6 @@ paths:
               schema:
                 type: integer
                 format: uint64
-        "415":
-          description: ""
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AptosError"
         "400":
           description: ""
           content:
@@ -1205,12 +1133,6 @@ paths:
               schema:
                 type: integer
                 format: uint64
-        "415":
-          description: ""
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AptosError"
         "400":
           description: ""
           content:
@@ -1235,7 +1157,7 @@ paths:
       tags:
         - Transactions
       summary: Get account transactions
-      description: "todo\ntodo, note that this currently returns [] even if the account doesn't\nexist, when it should really return a 404."
+      description: todo
       parameters:
         - name: address
           schema:
@@ -1304,12 +1226,6 @@ paths:
               schema:
                 type: integer
                 format: uint64
-        "415":
-          description: ""
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AptosError"
         "400":
           description: ""
           content:
@@ -1393,12 +1309,6 @@ paths:
               schema:
                 type: integer
                 format: uint64
-        "415":
-          description: ""
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AptosError"
         "400":
           description: ""
           content:
@@ -1481,12 +1391,6 @@ paths:
               schema:
                 type: integer
                 format: uint64
-        "415":
-          description: ""
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AptosError"
         "400":
           description: ""
           content:
@@ -1522,8 +1426,8 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          Ed25519Signature: "#/components/schemas/AccountSignature_Ed25519Signature"
-          MultiEd25519Signature: "#/components/schemas/AccountSignature_MultiEd25519Signature"
+          ed_25519_signature: "#/components/schemas/AccountSignature_Ed25519Signature"
+          multi_ed_25519_signature: "#/components/schemas/AccountSignature_MultiEd25519Signature"
     AccountSignature_Ed25519Signature:
       allOf:
         - type: object
@@ -1532,7 +1436,7 @@ components:
           properties:
             type:
               type: string
-              example: Ed25519Signature
+              example: ed_25519_signature
         - $ref: "#/components/schemas/Ed25519Signature"
     AccountSignature_MultiEd25519Signature:
       allOf:
@@ -1542,7 +1446,7 @@ components:
           properties:
             type:
               type: string
-              example: MultiEd25519Signature
+              example: multi_ed_25519_signature
         - $ref: "#/components/schemas/MultiEd25519Signature"
     AptosError:
       type: object
@@ -1768,7 +1672,7 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          WriteSetPayload: "#/components/schemas/GenesisPayload_WriteSetPayload"
+          write_set_payload: "#/components/schemas/GenesisPayload_WriteSetPayload"
     GenesisPayload_WriteSetPayload:
       allOf:
         - type: object
@@ -1777,7 +1681,7 @@ components:
           properties:
             type:
               type: string
-              example: WriteSetPayload
+              example: write_set_payload
         - $ref: "#/components/schemas/WriteSetPayload"
     GenesisTransaction:
       type: object
@@ -1905,9 +1809,9 @@ components:
     MoveFunctionVisibility:
       type: string
       enum:
-        - Private
-        - Public
-        - Friend
+        - private
+        - public
+        - friend
     MoveModule:
       type: object
       required:
@@ -2310,11 +2214,11 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          PendingTransaction: "#/components/schemas/Transaction_PendingTransaction"
-          UserTransaction: "#/components/schemas/Transaction_UserTransaction"
-          GenesisTransaction: "#/components/schemas/Transaction_GenesisTransaction"
-          BlockMetadataTransaction: "#/components/schemas/Transaction_BlockMetadataTransaction"
-          StateCheckpointTransaction: "#/components/schemas/Transaction_StateCheckpointTransaction"
+          pending_transaction: "#/components/schemas/Transaction_PendingTransaction"
+          user_transaction: "#/components/schemas/Transaction_UserTransaction"
+          genesis_transaction: "#/components/schemas/Transaction_GenesisTransaction"
+          block_metadata_transaction: "#/components/schemas/Transaction_BlockMetadataTransaction"
+          state_checkpoint_transaction: "#/components/schemas/Transaction_StateCheckpointTransaction"
     TransactionPayload:
       type: object
       oneOf:
@@ -2325,10 +2229,10 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          ScriptFunctionPayload: "#/components/schemas/TransactionPayload_ScriptFunctionPayload"
-          ScriptPayload: "#/components/schemas/TransactionPayload_ScriptPayload"
-          ModuleBundlePayload: "#/components/schemas/TransactionPayload_ModuleBundlePayload"
-          WriteSetPayload: "#/components/schemas/TransactionPayload_WriteSetPayload"
+          script_function_payload: "#/components/schemas/TransactionPayload_ScriptFunctionPayload"
+          script_payload: "#/components/schemas/TransactionPayload_ScriptPayload"
+          module_bundle_payload: "#/components/schemas/TransactionPayload_ModuleBundlePayload"
+          write_set_payload: "#/components/schemas/TransactionPayload_WriteSetPayload"
     TransactionPayload_ModuleBundlePayload:
       allOf:
         - type: object
@@ -2337,7 +2241,7 @@ components:
           properties:
             type:
               type: string
-              example: ModuleBundlePayload
+              example: module_bundle_payload
         - $ref: "#/components/schemas/ModuleBundlePayload"
     TransactionPayload_ScriptFunctionPayload:
       allOf:
@@ -2347,7 +2251,7 @@ components:
           properties:
             type:
               type: string
-              example: ScriptFunctionPayload
+              example: script_function_payload
         - $ref: "#/components/schemas/ScriptFunctionPayload"
     TransactionPayload_ScriptPayload:
       allOf:
@@ -2357,7 +2261,7 @@ components:
           properties:
             type:
               type: string
-              example: ScriptPayload
+              example: script_payload
         - $ref: "#/components/schemas/ScriptPayload"
     TransactionPayload_WriteSetPayload:
       allOf:
@@ -2367,7 +2271,7 @@ components:
           properties:
             type:
               type: string
-              example: WriteSetPayload
+              example: write_set_payload
         - $ref: "#/components/schemas/WriteSetPayload"
     TransactionSignature:
       type: object
@@ -2378,9 +2282,9 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          Ed25519Signature: "#/components/schemas/TransactionSignature_Ed25519Signature"
-          MultiEd25519Signature: "#/components/schemas/TransactionSignature_MultiEd25519Signature"
-          MultiAgentSignature: "#/components/schemas/TransactionSignature_MultiAgentSignature"
+          ed_25519_signature: "#/components/schemas/TransactionSignature_Ed25519Signature"
+          multi_ed_25519_signature: "#/components/schemas/TransactionSignature_MultiEd25519Signature"
+          multi_agent_signature: "#/components/schemas/TransactionSignature_MultiAgentSignature"
     TransactionSignature_Ed25519Signature:
       allOf:
         - type: object
@@ -2389,7 +2293,7 @@ components:
           properties:
             type:
               type: string
-              example: Ed25519Signature
+              example: ed_25519_signature
         - $ref: "#/components/schemas/Ed25519Signature"
     TransactionSignature_MultiAgentSignature:
       allOf:
@@ -2399,7 +2303,7 @@ components:
           properties:
             type:
               type: string
-              example: MultiAgentSignature
+              example: multi_agent_signature
         - $ref: "#/components/schemas/MultiAgentSignature"
     TransactionSignature_MultiEd25519Signature:
       allOf:
@@ -2409,7 +2313,7 @@ components:
           properties:
             type:
               type: string
-              example: MultiEd25519Signature
+              example: multi_ed_25519_signature
         - $ref: "#/components/schemas/MultiEd25519Signature"
     Transaction_BlockMetadataTransaction:
       allOf:
@@ -2419,7 +2323,7 @@ components:
           properties:
             type:
               type: string
-              example: BlockMetadataTransaction
+              example: block_metadata_transaction
         - $ref: "#/components/schemas/BlockMetadataTransaction"
     Transaction_GenesisTransaction:
       allOf:
@@ -2429,7 +2333,7 @@ components:
           properties:
             type:
               type: string
-              example: GenesisTransaction
+              example: genesis_transaction
         - $ref: "#/components/schemas/GenesisTransaction"
     Transaction_PendingTransaction:
       allOf:
@@ -2439,7 +2343,7 @@ components:
           properties:
             type:
               type: string
-              example: PendingTransaction
+              example: pending_transaction
         - $ref: "#/components/schemas/PendingTransaction"
     Transaction_StateCheckpointTransaction:
       allOf:
@@ -2449,7 +2353,7 @@ components:
           properties:
             type:
               type: string
-              example: StateCheckpointTransaction
+              example: state_checkpoint_transaction
         - $ref: "#/components/schemas/StateCheckpointTransaction"
     Transaction_UserTransaction:
       allOf:
@@ -2459,7 +2363,7 @@ components:
           properties:
             type:
               type: string
-              example: UserTransaction
+              example: user_transaction
         - $ref: "#/components/schemas/UserTransaction"
     UserTransaction:
       type: object
@@ -2570,8 +2474,8 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          ScriptWriteSet: "#/components/schemas/WriteSet_ScriptWriteSet"
-          DirectWriteSet: "#/components/schemas/WriteSet_DirectWriteSet"
+          script_write_set: "#/components/schemas/WriteSet_ScriptWriteSet"
+          direct_write_set: "#/components/schemas/WriteSet_DirectWriteSet"
     WriteSetChange:
       type: object
       oneOf:
@@ -2584,12 +2488,12 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          DeleteModule: "#/components/schemas/WriteSetChange_DeleteModule"
-          DeleteResource: "#/components/schemas/WriteSetChange_DeleteResource"
-          DeleteTableItem: "#/components/schemas/WriteSetChange_DeleteTableItem"
-          WriteModule: "#/components/schemas/WriteSetChange_WriteModule"
-          WriteResource: "#/components/schemas/WriteSetChange_WriteResource"
-          WriteTableItem: "#/components/schemas/WriteSetChange_WriteTableItem"
+          delete_module: "#/components/schemas/WriteSetChange_DeleteModule"
+          delete_resource: "#/components/schemas/WriteSetChange_DeleteResource"
+          delete_table_item: "#/components/schemas/WriteSetChange_DeleteTableItem"
+          write_module: "#/components/schemas/WriteSetChange_WriteModule"
+          write_resource: "#/components/schemas/WriteSetChange_WriteResource"
+          write_table_item: "#/components/schemas/WriteSetChange_WriteTableItem"
     WriteSetChange_DeleteModule:
       allOf:
         - type: object
@@ -2598,7 +2502,7 @@ components:
           properties:
             type:
               type: string
-              example: DeleteModule
+              example: delete_module
         - $ref: "#/components/schemas/DeleteModule"
     WriteSetChange_DeleteResource:
       allOf:
@@ -2608,7 +2512,7 @@ components:
           properties:
             type:
               type: string
-              example: DeleteResource
+              example: delete_resource
         - $ref: "#/components/schemas/DeleteResource"
     WriteSetChange_DeleteTableItem:
       allOf:
@@ -2618,7 +2522,7 @@ components:
           properties:
             type:
               type: string
-              example: DeleteTableItem
+              example: delete_table_item
         - $ref: "#/components/schemas/DeleteTableItem"
     WriteSetChange_WriteModule:
       allOf:
@@ -2628,7 +2532,7 @@ components:
           properties:
             type:
               type: string
-              example: WriteModule
+              example: write_module
         - $ref: "#/components/schemas/WriteModule"
     WriteSetChange_WriteResource:
       allOf:
@@ -2638,7 +2542,7 @@ components:
           properties:
             type:
               type: string
-              example: WriteResource
+              example: write_resource
         - $ref: "#/components/schemas/WriteResource"
     WriteSetChange_WriteTableItem:
       allOf:
@@ -2648,7 +2552,7 @@ components:
           properties:
             type:
               type: string
-              example: WriteTableItem
+              example: write_table_item
         - $ref: "#/components/schemas/WriteTableItem"
     WriteSetPayload:
       type: object
@@ -2665,7 +2569,7 @@ components:
           properties:
             type:
               type: string
-              example: DirectWriteSet
+              example: direct_write_set
         - $ref: "#/components/schemas/DirectWriteSet"
     WriteSet_ScriptWriteSet:
       allOf:
@@ -2675,7 +2579,7 @@ components:
           properties:
             type:
               type: string
-              example: ScriptWriteSet
+              example: script_write_set
         - $ref: "#/components/schemas/ScriptWriteSet"
     WriteTableItem:
       type: object
