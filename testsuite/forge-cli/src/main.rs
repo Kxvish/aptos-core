@@ -21,7 +21,7 @@ use url::Url;
 #[derive(StructOpt, Debug)]
 struct Args {
     // general options
-    #[structopt(long, default_value = "15")]
+    #[structopt(long, default_value = "2")]
     accounts_per_client: usize,
     #[structopt(long)]
     workers_per_ac: Option<usize>,
