@@ -279,7 +279,7 @@ impl<'a, R: MoveResolverExt + ?Sized> MoveConverter<'a, R> {
         op: WriteOp,
     ) -> Result<WriteSetChange> {
         let hex_handle = handle.0.to_be_bytes().to_vec().into();
-        let key = key.into();
+        let key: HexEncodedBytes = key.into();
         let ret = match op {
             WriteOp::Deletion => {
                 let data = self.try_delete_table_item_into_deleted_table_data(handle, &key.0)?;
